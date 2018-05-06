@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="black">
+    <ion-title>
+      Shopping List
+    </ion-title>
+
+    <ion-buttons end>
+    	<button navPush="AddShoppingItemPage" ion-button>
+    		<ion-icon name="add"></ion-icon>
+    	</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label fixed>
+      <button ion-button full small>
+        Select File
+      </button>
+    </ion-label>
+    <ion-label>
+      {{ selectedFile?.name }}
+    </ion-label>
+    <ion-input class="button-inner" type="file" id="fileInput" (input)="onFileChanged($event)">
+      Select File
+    </ion-input>   
+  </ion-item>
+  <button ion-button (click)="onUpload()" block>Upload file</button>
+</ion-content>
